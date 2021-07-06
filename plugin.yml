@@ -1,0 +1,9 @@
+name: CrunchFarm
+main: crunchFarmCore.Core
+version: 1.0
+api-version: 1.17
+commands:
+    farmsell:
+        description: test command
+        default: true
+        usage: farmsell
