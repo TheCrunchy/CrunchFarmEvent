@@ -136,14 +136,16 @@ public class Core extends JavaPlugin {
 			if (toPay > 0) {
 				Bukkit.getServer().dispatchCommand(Bukkit.getServer().getConsoleSender(),
 						"eco give " + player.getName() + " " + (toPay));
-				PlayerData data = PlayerData.get(player.getUniqueId());
-				gui.openInventory(player, data);
-				StorageManager.save(player.getUniqueId(), data);
+	
 			}
 			else {
 				player.sendMessage("You do not have any Star crops to sell me.");
 			}
-			
+			PlayerData data = PlayerData.get(player.getUniqueId());
+			if (data != null) {
+			gui.openInventory(player, data);
+			StorageManager.save(player.getUniqueId(), data);
+			}
 			return true;
 		}
 	}
