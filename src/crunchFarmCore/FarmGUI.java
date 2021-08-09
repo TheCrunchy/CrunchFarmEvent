@@ -56,7 +56,7 @@ public class FarmGUI implements Listener {
 			meta = item.getItemMeta();
 			meta.setDisplayName("§6Tier 1 Relic Bag");
 			lore.add("§aContains Bronze and Silver Relics");
-			lore.add("§aCosts 10 1 Star Points.");
+			lore.add("§aCosts 20 1 Star Points.");
 			meta.setLore(lore);
 			item.setItemMeta(meta);
 			break;
@@ -67,7 +67,7 @@ public class FarmGUI implements Listener {
 			meta.setDisplayName("§6Tier 2 Relic Bag");
 			lore.add("§aContains Bronze, Silver");
 			lore.add("§aand Gold Relics");
-			lore.add("§aCosts 10 2 Star Points.");
+			lore.add("§aCosts 20 2 Star Points.");
 			meta.setLore(lore);
 			item.setItemMeta(meta);
 			break;
@@ -75,10 +75,10 @@ public class FarmGUI implements Listener {
 		case 3:
 			item = new ItemStack(Material.RAW_GOLD);
 			meta = item.getItemMeta();
-			meta.setDisplayName("§6Tier 2 Relic Bag");
+			meta.setDisplayName("§6Tier 3 Relic Bag");
 			lore.add("§aContains Bronze, Silver,");
 			lore.add("§aGold and Ancient Relics");
-			lore.add("§aCosts 10 3 Star Points.");
+			lore.add("§aCosts 20 3 Star Points.");
 			meta.setLore(lore);
 			item.setItemMeta(meta);
 			break;
@@ -333,8 +333,8 @@ public class FarmGUI implements Listener {
 
 		PlayerData data = crunchFarmCore.Core.PlayerData.get(e.getWhoClicked().getUniqueId());
 		if (clickedItem.isSimilar(CreateBag(1))) {
-			 if (data.Tier1 >= 10) {
-				 data.Tier1 -= 10;
+			 if (data.Tier1 >= 20) {
+				 data.Tier1 -= 20;
 				 UpdateHeads(e.getInventory(), data, e.getWhoClicked());
 				 String command = "cr give to " + player.getName() + " RelicBag1";
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
@@ -342,8 +342,8 @@ public class FarmGUI implements Listener {
 			return;
 		}
 		if (clickedItem.isSimilar(CreateBag(2))) {
-			 if (data.Tier2 >= 10) {
-				 data.Tier2 -= 10;
+			 if (data.Tier2 >= 20) {
+				 data.Tier2 -= 20;
 				 UpdateHeads(e.getInventory(), data, e.getWhoClicked());
 				 String command = "cr give to " + player.getName() + " RelicBag2";
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
@@ -351,8 +351,8 @@ public class FarmGUI implements Listener {
 			return;
 		}
 		if (clickedItem.isSimilar(CreateBag(3))) {
-			 if (data.Tier3 >= 10) {
-				 data.Tier3 -= 10;
+			 if (data.Tier3 >= 20) {
+				 data.Tier3 -= 20;
 				 UpdateHeads(e.getInventory(), data, e.getWhoClicked());
 				 String command = "cr give to " + player.getName() + " RelicBag3";
 					Bukkit.dispatchCommand(Bukkit.getConsoleSender(), command);
